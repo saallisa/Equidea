@@ -11,7 +11,7 @@ use Equidea\Core\Utility\Container;
  * @package     Equidea
  * @version     0.1.0-dev
  */
-class AbstractBaseController {
+abstract class AbstractBaseController {
 
     /**
      * @var \Equidea\Core\Http\Interfaces\RequestInterface
