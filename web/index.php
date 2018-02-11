@@ -25,6 +25,9 @@ $response->setType('text/html');
 // Create a new dependency injection container
 $container = new Container();
 
+// Load templatating config
+require __DIR__.'/../app/config/templating.php';
+
 // Load the services
 require __DIR__.'/../app/config/services.php';
 
