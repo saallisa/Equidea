@@ -46,13 +46,17 @@ class AbstractBaseController {
     /**
      * @param   string  $template
      * @param   array   $data
+     * @param   int     $code
      *
      * @return  \Equidea\Core\Http\Interfaces\ResponseInterface
      */
-    protected function render(string $template, array $data) : ResponseInterface
-    {
+    protected function render(
+        string $template,
+        array $data,
+        int $code = 200
+    ) : ResponseInterface {
         $view = $this->container->retrieve('Template.Engine');
         $content = $view->render($template, $data);
-        return $this->response->withBody($content);
+        return $this->response->withCode($code)->withBody($content);
     }
 }
